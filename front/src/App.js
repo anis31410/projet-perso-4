@@ -17,10 +17,16 @@ class App extends React.Component {
       // ou token: token
     }
     this.setToken = this.setToken.bind(this);
+    this.disableToken = this.disableToken.bind(this);
   }
 
   setToken(token) {
     this.setState({ token })
+  }
+
+  disableToken() {
+    this.setState({ token: '' })
+    localStorage.setItem('token', '');
   }
 
   render() {
@@ -31,7 +37,7 @@ class App extends React.Component {
           token
             ?
             <div>
-              <MenuExampleTabularOnLeft />
+              <MenuExampleTabularOnLeft disableToken={this.disableToken}/>
               {/* <Switch>
                 <Route exact path="/match" component={Matchhh} />
                 <Route path="/classement" component={Classement} />

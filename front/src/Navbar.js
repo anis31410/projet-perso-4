@@ -5,6 +5,7 @@ import Matchhh from './matchhh';
 import Classement from './classement';
 import DeletePerso from './deletePerso';
 import Update from './ComposantUniqueUpdate';
+import Deconnexion from './Deconnexion';
 
 export default class MenuExampleTabularOnLeft extends Component {
   state = { activeItem: 'Match' }
@@ -24,6 +25,7 @@ export default class MenuExampleTabularOnLeft extends Component {
             <Menu.Item style={{ color: 'black' }} name='Create perso' active={activeItem === 'Create perso'} onClick={this.handleItemClick} />
             <Menu.Item style={{ color: 'black' }} name='Delete perso' active={activeItem === 'Delete perso'} onClick={this.handleItemClick} />
             <Menu.Item style={{ color: 'black' }} name='Update perso' active={activeItem === 'Update perso'} onClick={this.handleItemClick} />
+            <Menu.Item style={{ color: 'black' }} name='Deconnexion' active={activeItem === 'Deconnexion'} onClick={this.handleItemClick} />
           </Menu>
         </Grid.Column>
 
@@ -43,6 +45,9 @@ export default class MenuExampleTabularOnLeft extends Component {
             }
             {activeItem === 'Update perso' &&
               <Update />
+            }
+            {activeItem === 'Deconnexion' &&
+              <Deconnexion disableToken={this.props.disableToken}/>
             }
           </Segment>
         </Grid.Column>
