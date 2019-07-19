@@ -1,0 +1,10 @@
+.ui.card>.image>img, .ui.cards>.card>.image>img {
+  height: 20vw;
+  width: 100%
+}
+
+.ui.card {
+  margin-left: 25%;
+  object-fit: cover !important;
+  width: 50% !important
+}
